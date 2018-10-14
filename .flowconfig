@@ -1,0 +1,14 @@
+[ignore]
+
+; Ignore .history directory
+<PROJECT_ROOT>/\.history/
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+
+[strict]

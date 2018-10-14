@@ -1,0 +1,53 @@
+{
+  "name": "nyt-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "react": "^16.5.2",
+    "react-dom": "16.5.2",
+    "react-scripts": "2.0.4"
+  },
+  "scripts": {
+    "precommit": "lint-staged && yarn test",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "pretty": "prettier --semi false --print-width 100 --single-quote --trailing-comma all --write \"src/**/*.js\"",
+    "flow": "flow",
+    "flow-stop": "flow stop",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn pretty",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "babel-preset-flow": "6.23.0",
+    "enzyme": "3.7.0",
+    "enzyme-adapter-react-16": "1.6.0",
+    "enzyme-to-json": "3.3.4",
+    "eslint": "5.6.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-flowtype": "3.0.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-react": "7.11.1",
+    "flow-bin": "0.83.0",
+    "husky": "1.1.2",
+    "lint-staged": "7.3.0",
+    "prettier": "1.14.3"
+  }
+}
