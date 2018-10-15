@@ -5,3 +5,4 @@ deploy:
   app: nyt-react-3212
   on:
     repo: t-d-o-g/nyt-react
+    branch: master
