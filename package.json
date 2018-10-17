@@ -1,26 +1,26 @@
 {
   "name": "nyt-react",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:t-d-o-g/nyt-react.git",
+  "author": "Travis Collins <trc229@gmail.com>",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "eslint-plugin-flowtype": "3.0.0",
-    "eslint-plugin-jsx-a11y": "6.1.2",
-    "react": "^16.5.2",
-    "react-dom": "16.5.2",
-    "react-scripts": "2.0.4"
+    "eslint-plugin-jsx-a11y": "6.1.2"
   },
   "scripts": {
     "precommit": "lint-staged && yarn test",
-    "lint": "eslint src",
-    "lint:fix": "eslint src --fix",
-    "pretty": "prettier --semi false --print-width 100 --single-quote --trailing-comma all --write \"src/**/*.js\"",
+    "lint": "eslint client/src",
+    "lint:fix": "eslint client/src --fix",
+    "pretty": "prettier --semi false --print-width 100 --single-quote --trailing-comma all --write \"client/src/**/*.js\"",
     "flow": "flow",
     "flow-stop": "flow stop",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false",
-    "test:watch": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "cd client && yarn react-scripts start",
+    "build": "cd client && yarn react-scripts build",
+    "test": "cd client && yarn react-scripts test -- --coverage",
+    "test:watch": "cd client && yarn react-scripts test"
   },
   "lint-staged": {
     "*.js": [
