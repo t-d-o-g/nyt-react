@@ -12,6 +12,7 @@
   },
   "scripts": {
     "precommit": "lint-staged && yarn test",
+    "preinstall": "cd client && yarn",
     "lint": "eslint client/src",
     "lint:fix": "eslint client/src --fix",
     "pretty": "prettier --semi false --print-width 100 --single-quote --trailing-comma all --write \"client/src/**/*.js\"",
