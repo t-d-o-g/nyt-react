@@ -7,8 +7,13 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "axios": "0.18.0",
     "eslint-plugin-flowtype": "3.0.0",
-    "eslint-plugin-jsx-a11y": "6.1.2"
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "express": "4.16.4",
+    "if-env": "1.0.4",
+    "mongoose": "5.3.4",
+    "path": "0.12.7"
   },
   "scripts": {
     "precommit": "lint-staged && yarn test",
@@ -18,10 +23,14 @@
     "pretty": "prettier --semi false --print-width 100 --single-quote --trailing-comma all --write \"client/src/**/*.js\"",
     "flow": "flow",
     "flow-stop": "flow stop",
-    "start": "cd client && yarn react-scripts start",
+    "start": "if-env NODE_ENV=production && yarn run start:prod || yarn run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"yarn run client\"",
+    "client": "cd client && yarn react-scripts start",
     "build": "cd client && yarn react-scripts build",
     "test": "cd client && yarn react-scripts test -- --coverage",
-    "test:watch": "cd client && yarn react-scripts test"
+    "test:watch": "cd client && yarn react-scripts test",
+    "heroku-postbuild": "npm run build"
   },
   "lint-staged": {
     "*.js": [
@@ -40,6 +49,7 @@
   ],
   "devDependencies": {
     "babel-preset-flow": "6.23.0",
+    "concurrently": "4.0.1",
     "enzyme": "3.7.0",
     "enzyme-adapter-react-16": "1.6.0",
     "enzyme-to-json": "3.3.4",
@@ -51,6 +61,7 @@
     "flow-bin": "0.83.0",
     "husky": "1.1.2",
     "lint-staged": "7.3.0",
+    "nodemon": "1.18.4",
     "prettier": "1.14.3"
   }
 }
