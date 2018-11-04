@@ -47,7 +47,7 @@ const Form = props => (
       />
     </div>
     <div className="pull-right">
-      <button onClick={props.handleInputChange} type="submit" className="btn btn-lg btn-danger">
+      <button onClick={props.handleFormSubmit} type="submit" className="btn btn-lg btn-danger">
         Submit
       </button>
     </div>
@@ -57,6 +57,7 @@ const Form = props => (
 Form.propTypes = {
   q: PropTypes.string.isRequired,
   handleInputChange: PropTypes.func.isRequired,
+  handleFormSubmit: PropTypes.func.isRequired,
   startYear: PropTypes.string.isRequired,
   endYear: PropTypes.string.isRequired,
 }

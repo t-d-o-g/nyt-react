@@ -1,19 +1,20 @@
-const axios = 'axios'
+const axios = require('axios')
 const db = require('../models')
 
 module.exports = {
   findAll: (req, res) => {
-    const params = Object.assign({ apiKey: process.env.NYT_API_KEY }, req.query)
+    console.log('key', process.env.NYT_API_KEY)
+    const params = Object.assign({ api_key: process.env.NYT_API_KEY }, req.query)
     console.log('params', params)
 
     axios
       .get('https://api.nytimes.com/svc/search/v2/articlesearch.json', {
         params,
       })
-      .then(res => {
+      .then(response => {
         db.Article.find()
           .then(dbArticles =>
-            res.data.response.docs.filter(article =>
+            response.data.response.docs.filter(article =>
               dbArticles.every(dbArticle => dbArticle._id.toString() !== article._id),
             ),
           )

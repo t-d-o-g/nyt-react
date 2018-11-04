@@ -8,6 +8,7 @@
   "private": true,
   "dependencies": {
     "axios": "0.18.0",
+    "dotenv": "6.1.0",
     "eslint-plugin-flowtype": "3.0.0",
     "eslint-plugin-jsx-a11y": "6.1.2",
     "express": "4.16.4",
