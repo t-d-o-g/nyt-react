@@ -1,11 +1,15 @@
-const axios = require('axios')
 const router = require('express').Router()
+const articleController = require('../../controllers/articleController')
 
-router.get('/articles', (req, res) => {
-  axios
-    .get('https://api.nytimes.com/svc/search/v2/articlesearch.json?', { params: req.query })
-    .then(({ data: { results } }) => res.json(results))
-    .catch(err => res.status(422).json(err))
-})
+router
+  .route('/')
+  .get(articleController.findAll)
+  .post(articleController.create)
+
+router
+  .route('/:id')
+  .get(articleController.findById)
+  .put(articleController.update)
+  .delete(articleController.remove)
 
 module.exports = router

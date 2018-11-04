@@ -26,9 +26,9 @@ const Form = props => (
         className="form-control"
         id="start-year"
         type="number"
-        value={props.start_year}
+        value={props.startYear}
         placeholder="2017"
-        name="start_year"
+        name="startYear"
         onChange={props.handleInputChange}
         required
       />
@@ -39,9 +39,9 @@ const Form = props => (
         className="form-control"
         id="end-year"
         type="number"
-        value={props.end_year}
+        value={props.endYear}
         placeholder="2018"
-        name="end_year"
+        name="endYear"
         onChange={props.handleInputChange}
         required
       />
@@ -57,8 +57,8 @@ const Form = props => (
 Form.propTypes = {
   q: PropTypes.string.isRequired,
   handleInputChange: PropTypes.func.isRequired,
-  start_year: PropTypes.string.isRequired,
-  end_year: PropTypes.string.isRequired,
+  startYear: PropTypes.string.isRequired,
+  endYear: PropTypes.string.isRequired,
 }
 
 export default Form

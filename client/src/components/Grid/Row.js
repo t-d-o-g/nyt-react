@@ -6,6 +6,10 @@ export const Row = ({ fluid, children }) => (
 )
 
 Row.propTypes = {
-  fluid: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
+  fluid: PropTypes.string,
+  children: PropTypes.node.isRequired,
+}
+
+Row.defaultProps = {
+  fluid: undefined,
 }

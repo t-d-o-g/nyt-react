@@ -6,6 +6,10 @@ export const Container = ({ fluid, children }) => (
 )
 
 Container.propTypes = {
-  fluid: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
+  fluid: PropTypes.string,
+  children: PropTypes.node.isRequired,
+}
+
+Container.defaultProps = {
+  fluid: undefined,
 }

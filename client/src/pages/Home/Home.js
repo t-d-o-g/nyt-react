@@ -87,7 +87,7 @@ class Home extends Component {
                   {articles.map(article => (
                     <Article
                       key={article.id}
-                      _id={article.id}
+                      id={article.id}
                       title={article.headline.main}
                       url={article.webUrl}
                       date={article.pubDate}

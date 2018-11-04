@@ -17,9 +17,13 @@ const Card = props => (
 )
 
 Card.propTypes = {
-  icon: PropTypes.symbol.isRequired,
+  icon: PropTypes.string,
   title: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
+}
+
+Card.defaultProps = {
+  icon: undefined,
 }
 
 export default Card

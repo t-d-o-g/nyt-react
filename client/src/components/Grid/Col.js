@@ -13,6 +13,6 @@ export const Col = ({ size, children }) => (
 )
 
 Col.propTypes = {
-  size: PropTypes.number.isRequired,
-  children: PropTypes.element.isRequired,
+  size: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 }

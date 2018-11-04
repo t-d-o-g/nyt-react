@@ -5,7 +5,7 @@ import './Jumbotron.css'
 const Jumbotron = ({ children }) => <div className="jumbotron mt-2">{children}</div>
 
 Jumbotron.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
 }
 
 export default Jumbotron

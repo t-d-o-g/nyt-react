@@ -25,6 +25,11 @@ const Nav = () => (
             Search
           </Link>
         </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/saved">
+            Saved Articles
+          </Link>
+        </li>
       </ul>
     </div>
   </nav>
