@@ -26,7 +26,7 @@ Article.propTypes = {
   title: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   _id: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
+  date: PropTypes.string,
   handleClick: PropTypes.func.isRequired,
   buttonText: PropTypes.string.isRequired,
   saved: PropTypes.bool,

@@ -1,3 +1,6 @@
+/* eslint camelcase: 0 */
+/* eslint no-underscore-dangle: 0 */
+
 import React, { Component } from 'react'
 import Jumbotron from '../../components/Jumbotron'
 import Card from '../../components/Card'
@@ -12,8 +15,8 @@ class Home extends Component {
   state = {
     articles: [],
     q: '',
-    startYear: '',
-    endYear: '',
+    start_year: '',
+    end_year: '',
     message: 'Search for Articles',
   }
 
