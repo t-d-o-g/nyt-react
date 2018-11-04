@@ -3,9 +3,7 @@ const db = require('../models')
 
 module.exports = {
   findAll: (req, res) => {
-    console.log('key', process.env.NYT_API_KEY)
     const params = Object.assign({ api_key: process.env.NYT_API_KEY }, req.query)
-    console.log('params', params)
 
     axios
       .get('https://api.nytimes.com/svc/search/v2/articlesearch.json', {

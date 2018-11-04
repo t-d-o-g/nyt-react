@@ -54,8 +54,8 @@ class Saved extends Component {
                 <List>
                   {articles.map(article => (
                     <Article
-                      key={article.id}
-                      id={article.id}
+                      key={article._id}
+                      _id={article._id}
                       title={article.title}
                       url={article.url}
                       date={article.date}

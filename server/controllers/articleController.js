@@ -16,7 +16,7 @@ module.exports = {
     const article = {
       _id: req.body._id,
       title: req.body.headline.main,
-      url: req.body.webUrl,
+      url: req.body.web_url,
     }
     db.Article.create(article)
       .then(dbArticle => res.json(dbArticle))

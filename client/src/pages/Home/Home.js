@@ -25,12 +25,12 @@ class Home extends Component {
   }
 
   getArticles = () => {
-    const { startYear, endYear, q } = this.state
+    const { start_year, end_year, q } = this.state
     api
       .getArticles({
         q,
-        startYear,
-        endYear,
+        start_year,
+        end_year,
       })
       .then(res =>
         this.setState({
@@ -50,12 +50,12 @@ class Home extends Component {
 
   handleArticleSave = id => {
     const { articles } = this.state
-    const article = articles.find(thisArticle => thisArticle.id === id)
+    const article = articles.find(thisArticle => thisArticle._id === id)
     api.saveArticle(article).then(() => this.getArticles())
   }
 
   render() {
-    const { startYear, endYear, q, articles, message } = this.state
+    const { start_year, end_year, q, articles, message } = this.state
     return (
       <Container>
         <Row>
@@ -73,8 +73,8 @@ class Home extends Component {
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
                 q={q}
-                startYear={startYear}
-                endYear={endYear}
+                startYear={start_year}
+                endYear={end_year}
               />
             </Card>
           </Col>
@@ -86,11 +86,11 @@ class Home extends Component {
                 <List>
                   {articles.map(article => (
                     <Article
-                      key={article.id}
-                      id={article.id}
+                      key={article._id}
+                      _id={article._id}
                       title={article.headline.main}
-                      url={article.webUrl}
-                      date={article.pubDate}
+                      url={article.web_url}
+                      date={article.pub_date}
                       handleClick={this.handleArticleSave}
                       buttonText="Save Article"
                     />
