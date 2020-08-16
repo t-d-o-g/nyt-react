@@ -26,9 +26,11 @@ const Form = props => (
         className="form-control"
         id="start-year"
         type="number"
-        value={props.start_year}
-        placeholder="2017"
-        name="startYear"
+        min="1600"
+        max={props.max}
+        value={props.begin_date}
+        placeholder={props.max - 1}
+        name="begin_date"
         onChange={props.handleInputChange}
         required
       />
@@ -39,9 +41,11 @@ const Form = props => (
         className="form-control"
         id="end-year"
         type="number"
-        value={props.end_year}
-        placeholder="2018"
-        name="endYear"
+        min="1000"
+        max={props.max}
+        value={props.end_date}
+        placeholder={props.max}
+        name="end_date"
         onChange={props.handleInputChange}
         required
       />
@@ -58,13 +62,8 @@ Form.propTypes = {
   q: PropTypes.string.isRequired,
   handleInputChange: PropTypes.func.isRequired,
   handleFormSubmit: PropTypes.func.isRequired,
-  start_year: PropTypes.string,
-  end_year: PropTypes.string,
-}
-
-Form.defaultProps = {
-  start_year: undefined,
-  end_year: undefined,
+  begin_date: PropTypes.string,
+  end_date: PropTypes.string,
 }
 
 export default Form

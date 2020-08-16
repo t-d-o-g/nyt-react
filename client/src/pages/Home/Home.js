@@ -15,8 +15,8 @@ class Home extends Component {
   state = {
     articles: [],
     q: '',
-    start_year: '',
-    end_year: '',
+    begin_date: '',
+    end_date: '',
     message: 'Search for Articles',
   }
 
@@ -28,12 +28,12 @@ class Home extends Component {
   }
 
   getArticles = () => {
-    const { start_year, end_year, q } = this.state
+    const { begin_date, end_date, q } = this.state
     api
       .getArticles({
         q,
-        start_year,
-        end_year,
+        begin_date,
+        end_date,
       })
       .then(res =>
         this.setState({
@@ -58,7 +58,7 @@ class Home extends Component {
   }
 
   render() {
-    const { start_year, end_year, q, articles, message } = this.state
+    const { begin_date, end_date, q, articles, message } = this.state
     return (
       <Container>
         <Row>
@@ -76,8 +76,9 @@ class Home extends Component {
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
                 q={q}
-                startYear={start_year}
-                endYear={end_year}
+                begin_date={begin_date}
+                end_date={end_date}
+                max={new Date().getFullYear()}
               />
             </Card>
           </Col>
