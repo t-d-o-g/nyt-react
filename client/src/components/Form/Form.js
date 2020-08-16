@@ -64,7 +64,7 @@ Form.propTypes = {
   handleFormSubmit: PropTypes.func.isRequired,
   begin_date: PropTypes.string,
   end_date: PropTypes.string,
-  max: PropTypes.string.isRequired,
+  max: PropTypes.number.isRequired,
 }
 
 Form.defaultProps = {
