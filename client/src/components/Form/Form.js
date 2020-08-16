@@ -64,6 +64,12 @@ Form.propTypes = {
   handleFormSubmit: PropTypes.func.isRequired,
   begin_date: PropTypes.string,
   end_date: PropTypes.string,
+  max: PropTypes.string.isRequired,
+}
+
+Form.defaultProps = {
+  begin_date: undefined,
+  end_date: undefined,
 }
 
 export default Form
