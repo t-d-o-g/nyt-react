@@ -34,8 +34,6 @@ module.exports = {
       params.begin_date += '0101'
     }
 
-    console.log(`params: ${JSON.stringify(params)}`)
-
     axios
       .get('https://api.nytimes.com/svc/search/v2/articlesearch.json', {
         params,

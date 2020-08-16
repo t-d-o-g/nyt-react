@@ -14,7 +14,7 @@ module.exports = {
   },
   create: (req, res) => {
     const article = {
-      _id: req.body._id,
+      _id: req.body._id.replace('nyt://article/', ''),
       title: req.body.headline.main,
       url: req.body.web_url,
     }

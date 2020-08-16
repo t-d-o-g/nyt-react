@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const articleSchema = new Schema(
   {
-    _id: { type: Schema.Types.ObjectId, required: true },
+    _id: { type: String, required: true },
     title: { type: String, required: true },
     date: { type: Date, default: Date.now },
     url: { type: String, required: true },
